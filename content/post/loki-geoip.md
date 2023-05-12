@@ -56,7 +56,7 @@ Deployment of Grafana, Loki & other stuff is out of scope.
 ### Grafana
 [Grafana](https://grafana.com/oss/grafana/) is a super cool piece of software used to create and consult dashboards based on data!
 
-![Grafana dashboard][./grafana.png]
+![Grafana dashboard](./grafana.png)
 
 ### Grafana Loki
 [Loki](https://grafana.com/oss/loki/) (not the Norse god), is a great piece of software heavily inspired by [Prometheus](https://prometheus.io/) but focused on collecting logs rather than metrics data.  
