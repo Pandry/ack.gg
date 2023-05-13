@@ -1,6 +1,6 @@
 baseURL = 'https://ack.gg/'
 languageCode = 'en-us'
-title = 'Acknowledged: Good Game'
+title = 'Lesson acknowledged: Good Game'
 theme = "hulga"
 paginate = 15
 
@@ -17,7 +17,7 @@ paginate = 15
   autoCollapseToc = true
   darkMedia = true
   heroBold = false
-  heroSteamDeck = false
+  heroSteamDeck = true
   pwa = true
   noCDN = true
 
@@ -40,11 +40,11 @@ paginate = 15
 #    name = "Archives"
 #    url = "/archives/"
 #    weight = 2
-#  [[menu.main]]
-#    identifier = "about"
-#    name = "About"
-#    url = "/about/"
-#    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
   [[menu.main]]
     identifier = "tags"
     name = "Tags"

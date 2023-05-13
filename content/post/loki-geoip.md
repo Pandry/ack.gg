@@ -157,7 +157,7 @@ Pro tip: you may want to setup a cronjob to update the DB from time to time!
 
 ### Grafana configuration
 
-Create a new Grafana graph, set Loki as the source and use this query (edit is as you like or need): `{source="file", job="nginx_reverse_proxy"} != "geoip\":null" | json lat="geoip.latitude", long="geoip.longitude" | lat != ""`  
+Create a new Grafana graph, set Loki as the source and use this query (edit it as you like or need): `{source="file", job="nginx_reverse_proxy"} != "geoip\":null" | json lat="geoip.latitude", long="geoip.longitude" | lat != ""`  
 
 Then, in the *Transform* tab:
 - *Extract fields*
