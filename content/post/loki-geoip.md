@@ -153,7 +153,11 @@ compression = "snappy"
 That's it! 
 We're now enriching our Nginx logs with location data!  
 
+
+{{< admonition title="Pro tip" >}}
 Pro tip: you may want to setup a cronjob to update the DB from time to time!
+{{< /admonition >}}
+
 
 ### Grafana configuration
 
