@@ -10,16 +10,20 @@
     }
     .admonition-title-container{
         background-color: {{$defaultBgColor}};
+        border-top-right-radius: 5px;
     }
     .admonition-title {
         font-weight: bolder;
         font-size: large;
-        backdrop-filter: grayscale(70%) brightness(140%);
+        backdrop-filter: grayscale(50%) brightness(150%);
+        -webkit-backdrop-filter: grayscale(50%) brightness(150%);
         padding: 5px 0 5px 30px;
+        border-top-right-radius: 5px;
     }
     @media (prefers-color-scheme: dark) {
         .admonition-title {
             backdrop-filter: grayscale(40%) brightness(40%);
+            -webkit-backdrop-filter: grayscale(40%) brightness(40%);
         }
     }
     .admonition-content{

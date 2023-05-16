@@ -22,7 +22,7 @@ I created a new shortcode (`layouts/shortcodes/admonition.html`):
 {{ if not (.Page.Scratch.Get "hasAdmonitions")}}
 {{ .Page.Scratch.Set "hasAdmonitions" "True" }}
 <style>
-    {{ $defaultBgColor := "#00ee88"}}
+    {{ $defaultBgColor := "#00bcf6"}}
     .admonition{
         border-radius: 5px;
         padding: 0px;
@@ -31,16 +31,20 @@ I created a new shortcode (`layouts/shortcodes/admonition.html`):
     }
     .admonition-title-container{
         background-color: {{$defaultBgColor}};
+        border-top-right-radius: 5px;
     }
     .admonition-title {
         font-weight: bolder;
         font-size: large;
-        backdrop-filter: grayscale(70%) brightness(140%);
+        backdrop-filter: grayscale(50%) brightness(150%);
+        -webkit-backdrop-filter: grayscale(50%) brightness(150%);
         padding: 5px 0 5px 30px;
+        border-top-right-radius: 5px;
     }
     @media (prefers-color-scheme: dark) {
         .admonition-title {
             backdrop-filter: grayscale(40%) brightness(40%);
+            -webkit-backdrop-filter: grayscale(40%) brightness(40%);
         }
     }
     .admonition-content{
@@ -74,7 +78,7 @@ and the bg-color is totally optional.
 
 If you can read the CSS code you can see the "trickery" I did to have a lighter background.  
 Not really proud of that to be honest, but it kinda works, so that's good enough. Just remember to use
-<i style="background-image:linear-gradient(90deg,rgba(255,0,0,1) 0%,rgba(255,154,0,1) 10%,rgba(208,222,33,1) 20%,rgba(79,220,74,1) 30%,rgba(63,218,216,1) 40%,rgba(47,201,226,1) 50%,rgba(28,127,238,1) 60%,rgba(95,21,242,1) 70%,rgba(186,12,248,1) 80%,rgba(251,7,217,1) 90%,rgba(255,0,0,1) 100%);color:#fff;font-weight:bolder;padding:2px;letter-spacing:3px;text-shadow: #000 0px 0px 2px;">&nbsp;BRIGHT&nbsp;</i> colors, or the filter will hide the backgroin color in the title section
+<i style="background-image:linear-gradient(90deg,rgba(255,0,0,1) 0%,rgba(255,154,0,1) 10%,rgba(208,222,33,1) 20%,rgba(79,220,74,1) 30%,rgba(63,218,216,1) 40%,rgba(47,201,226,1) 50%,rgba(28,127,238,1) 60%,rgba(95,21,242,1) 70%,rgba(186,12,248,1) 80%,rgba(251,7,217,1) 90%,rgba(255,0,0,1) 100%);color:#fff;font-weight:bolder;padding:2px;letter-spacing:3px;text-shadow: #000 0px 0px 2px;">&nbsp;BRIGHT&nbsp;</i> colors, or the filter will hide the background color in the title section
 
 ## How it works
 Ignoring the CSS for the lighter code (which is just a [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)), the way this works is pretty easy: we just format some text in some HTML.  
