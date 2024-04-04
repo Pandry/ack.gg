@@ -8,7 +8,7 @@ tags:
 categories:
 - Systems & Infrastructure
 ---
-In the mid of our beta stage, we realized we didn't really need a multi-AZ EKS clsuter in a beta stage.  
+In the midst of our beta stage, we realized we didn't really need a multi-AZ EKS cluster in a beta stage.  
 
 {{<admonition title="This post is AWS-specific"/>}}
 
@@ -16,7 +16,7 @@ Long story short there is cross-AZ traffic, which gets very expensive very quick
 Which was our case, of course.  
 
 There are better solutions of course, like instructing k8s to deploy all pods talking with each other in the same AZ (and reducing the possible damage in case an entire AZ goes down).  
-In our case we wanted to keep the number of instance manually manged.  
+In our case we wanted to keep the number of instance manually managed.  
 Scaling up multiple node groups and handling the scheduling decision was something we just didn't want to do as it was necessary at the time.  
 
 So I wrote a script to migrate the PVs across availabiliy zones.  
@@ -78,7 +78,7 @@ Not ideal, but at least it's possible to recover some data.
 
 ### Concept
 
-The script lists all the Persistent Volumes in a cluster which are also located in the source availability zone (and whose name does not contain `prometheus`). Then, for each perstent volume:  
+The script lists all the Persistent Volumes in a cluster which are also located in the source availability zone (and whose name does not contain `prometheus`). Then, for each persistent volume:  
 
 Gets the EBS volume ID, and the relative PVC. It also tries to find a workload related to the PV.  
 If a workload was found, it tries to scale it down to 0, so that the migration does not corrupt/lose data.  
